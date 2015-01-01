@@ -317,14 +317,6 @@ class AkeebasubsModelSubscribes extends F0FModel
 			return $ret;
 		}
 
-		// Joomla doens't allow spaces in usernames
-		if (strpos($username, ' ') !== false)
-		{
-			$ret->username = false;
-
-			return $ret;
-		}
-
 		$user = F0FModel::getTmpInstance('Jusers', 'AkeebasubsModel')
 			->username($username)
 			->getFirstItem();
